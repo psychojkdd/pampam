@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+:root {
+    --1color: #FFFFFF; 
+    --2color: #181C14;
+    --3color: #3C3D37;
+    --4color: #697565;
+    --5color: #ECDFCC;
+}
+body {
+    background-color: var(--5color);
+    color: var(--2color);
+}
+.container {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.header {
+    padding: 20px 0;
+    background-color: var(--4color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+}
+.buttonewr {
+    cursor: pointer;
+    border: 0;
+    background-color: var(--4color);
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.buttonewr:hover {
+    background-color: var(--3color);
+}
+
+#list {
+    background-color: var(--3color);
+    width: 100%;             
+    padding: 20px 0; 
+    display: none;
+    position: relative;
+}
+
+.menu-list {
+    background-color: var(--3color);
+    width: 100%;             
+    padding: 20px 0; 
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.list, .listitem {
+    list-style: none;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.menulistlink {
+    text-decoration: none;
+    color: var(--1color);
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.menulistlink:hover {
+    color: var(--5color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.nav-link {
+    color: var(--1color);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu-list.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.main-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+
+.content-block, .content-list {
+    background-color: var(--5color);
+    padding: 15px;
+    border: 1px solid var(--3color);
+    text-align: center;
+    transform: translateY(20px); /* Сдвигаем вниз */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Ограничивает ширину блока */
+    margin: 20px auto;
+}
+
+.content-block.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-image {
+    max-width: 100%;
+    margin-bottom: 10px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.content-image:hover {
+    transform: scale(1.05); /* Легкое увеличение изображения при наведении */
+}
+
+.content-text {
+    opacity: 1; /* Убедитесь, что текст виден */
+    transition: opacity 0.6s ease;
+    margin: 0; /* Убираем все внешние отступы */
+    padding: 10px 0; /* Добавляем только небольшой внутренний отступ сверху и снизу */        font-size: 16px; /* Устанавливаем комфортный размер шрифта */     line-height: 1.6; /* Регулируем межстрочный интервал для более компактного отбражения */
+    color: var(--2color); /* Устанавливаем цвет текста */
+    text-align: justify; /* Выравниваем текст по ширине, чтобы он был ровным с обеих сторон */
+}
+
+
+.btn-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--3color);
+    color: var(--1color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: var(--2color);
+    transform: translateY(-5px); /* Поднятие кнопки при наведении */
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    background-color: #181C14;
+    color: #FFFFFF;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .content-block {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .content-text {
+        font-size: 14px;
+    }
+
+    .btn-link {
+        padding: 8px 16px;
+    }
+}
+
+.content-list .list-item {
+    background-color: #181C14;
+    color: #FFFFFF;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: left;
+}
+.header2 {
+    background-color: var(--2color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--3color);
+    margin-top: 0; /* Убираем отступ сверху */
+}
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--3color);
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.login-container {
+    width: 350px;
+    background-color: var(--4color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+h1.title {
+    font-size: 28px;
+    color: var(--1color);
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    text-align: left;
+    color: var(--1color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
+    background-color: var(--2color);
+    border: 1px solid var(--3color);
+    border-radius: 8px;
+    color: var(--1color);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--1color);
+    outline: none;
+}
+
+.login-button {
+    padding: 12px;
+    background-color: var(--1color);
+    color: var(--2color);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: var(--2color);
+    color: var(--1color);
+}
+
+.regist {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--1color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.regist:hover {
+    color: var(--4color);
+}
+
+/* Рамки для постов */
+.post {
+    background-color: var(--5color);
+    padding: 20px;
+    border: 1px solid var(--3color);
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+    font-size: 24px;
+    color: var(--2color);
+    margin-bottom: 10px;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.post p {
+    font-size: 14px;
+    color: var(--1color);
+}
+
+/* Для текста, если постов нет */
+.container p {
+    font-size: 16px;
+    text-align: center;
+    color: var(--2color);
+}
+
+
+
+/* Респонсивность */
+@media (max-width: 600px) {
+    .login-container {
+        width: 100%;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    h1.title {
+        font-size: 24px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Общий стиль контейнера */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: transparent; /* Прозрачный фон */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    word-wrap: break-word;
+    font-family: Arial, sans-serif;
+}
+
+/* Стиль заголовка */
+.container h1 {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Georgia', serif; /* Более элегантный шрифт */
+}
+
+/* Стиль изображения */
+.container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Добавляет эффект при наведении */
+}
+
+.container img:hover {
+    transform: scale(1.05); /* Легкое увеличение изображения при наведении */
+}
+
+/* Стиль текста описания */
+.container p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.1em;
+    text-align: justify;
+    margin-top: 20px;
+}
+
+h2 {
+    color: var(--5color);
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.results {
+    list-style-type: none;
+    padding: 0;
+}
+
+.results li {
+    background-color: var(--3color);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.results li:hover {
+    background-color: var(--4color);
+}
+
+.results a {
+    color: var(--1color);
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+.results a:hover {
+    text-decoration: underline;
+}
+
+p {
+    color: var(--4color);
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Стили для контейнера поиска */
+.search-container {
+    flex-grow: 1;
+    max-width: 500px;
+}
+
+.search-container form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-container input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid var(--3color);
+    border-radius: 5px;
+    background-color: var(--3color);
+    color: var(--1color);
+}
+
+.search-container button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--4color);
+    color: var(--1color);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: var(--5color);
+}
+
+/* Стили для навигации */
+.navbar {
+    display: flex;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--1color);
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: var(--3color);
+}
+
+.header, .header2 {
+    margin: 0; /* Убираем отступы между хедерами */
+    padding: 0; /* Убираем внутренние отступы у хедеров */
+}
+
+#list {
+    margin: 0;
+    padding: 0;
+    background-color: var(--3color);
+    width: 100%;
+    padding: 20px 0;
+    display: none;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет блокам переноситься на новую строку */
+    gap: 20px; /* Расстояние между блоками */
+    justify-content: center;
+}
+
+.content-block {
+    flex: 1 1 calc(33.33% - 20px); /* Равномерно делим на три блока с учётом отступов */
+    max-width: calc(33.33% - 20px); /* Ограничиваем ширину каждого блока */
+    background-color: var(--5color);
+    padding: 15px;
+    border: 1px solid var(--3color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 768px) {
+    .content-block {
+        flex: 1 1 100%; /* Блоки занимают 100% ширины на маленьких экранах */
+        max-width: 100%;
+    }
+}

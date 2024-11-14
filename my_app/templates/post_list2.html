@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block title %}{{ content_block.title }}{% endblock %}
+
+{% block content %}
+   <div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px; word-wrap: break-word;">
+        <!-- Заголовок сверху -->
+        <h1 style="text-align: center;">{{ content_block.title }}</h1>
+
+        <!-- Изображение снизу -->
+        {% if content_block.image %}
+            <div style="margin-top: 20px; text-align: center;">
+                <img src="{{ content_block.image.url }}" alt="{{ content_block.title }}" style="max-width: 100%; height: auto;">
+            </div>
+        {% endif %}
+
+        <!-- Описание снизу -->
+        <p style="margin-top: 20px; line-height: 1.6; word-wrap: break-word;">{{ content_block.description }}</p>
+    </div>
+{% endblock %}

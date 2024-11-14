@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<div class="content-container">
+    {% for block in content_blocks %}
+        <section class="content-block">
+            {% if block.image %}
+                <img src="{{ block.image.url }}" alt="image" class="content-image">
+            {% endif %}
+            <p class="content-text">{{ block.short_description }}</p>
+            <a href="{% url 'post_list2' block.pk %}" class="btn-link">Перейти</a>
+        </section>
+    {% empty %}
+        <p>Нет контент-блоков для отображения.</p>
+    {% endfor %}
+</div>
+{% endblock %}

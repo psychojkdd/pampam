@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}мур мвркет{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'js/hui.js' %}"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="ocontainer">
+            <button class="buttonewr" onclick="val()">
+                <img src="{% static 'images/ewr.svg' %}" alt="eror 2:10" width="180" height="50">
+            </button>
+        </div>
+        <div id="list" style="display: none;"> 
+            <div class="container">
+                <ul class="list">
+                    <li class="listitem"><a href="http://127.0.0.1:8001/" class="menulistlink"><span>home</span></a></li>
+                    <a href="{% url 'login' %}" class="menulistlink"><span>login/enrolment</span></a>
+                    <a href="{}" class="menulistlink"><span>user</span></a>                  
+                </ul>
+            </div>
+        </div>
+    </header>
+    <header class="header2">
+        <div class="search-container">
+            <form method="GET" action="{% url 'search' %}">
+                <input type="text" name="q" placeholder="Введите запрос для поиска">
+                <button type="submit">Поиск</button>
+            </form>
+        </div>
+        <nav class="navbar">
+            <a href="http://127.0.0.1:8001/" class="nav-link">главная</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

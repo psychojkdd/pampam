@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ content_block.title }}</h1>
+    <p>{{ content_block.description }}</p>  <!-- Полное описание -->
+    {% if content_block.image %}
+        <img src="{{ content_block.image.url }}" alt="{{ content_block.title }}">
+    {% endif %}
+{% endblock %}

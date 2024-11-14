@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="auth">
+        <div class="login-container">
+            <div class="header">
+                <img src="{% static 'images/ewr.svg' %}" alt="Logo">
+            </div>
+            <div class="sign-in">sign in</div>
+            <form class="login-form" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="login-button">enter</button>
+            </form>
+            <a href="{% url 'register' %}" class="regist">regist</a>
+        </div>
+    </div>
+{% endblock %}
+
+
+
